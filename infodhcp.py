@@ -7,6 +7,7 @@ if sys.argv[1] == "-l":
 	concesiones = commands.getoutput("cat /var/lib/dhcp/dhcpd.leases |grep lease.*.{ |uniq")
 	concesiones = concesiones.replace("lease", "IP Concedida:");
 	concesiones = concesiones.replace("{", "");
+	print "Listado de concesiones del servidor dhcp"
 	print concesiones
 
 else: 
