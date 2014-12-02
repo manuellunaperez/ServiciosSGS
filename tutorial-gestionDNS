@@ -1,0 +1,15 @@
+Si introducimos "python gestionDNS.py -a -dir pandora 192.168.100.1" se agregará una entrada al fichero de resolución directa con el siguiente contenido:
+pandora		IN	A	192.168.100.1
+
+También se agregará una entrada al fichero de resolución inversa:
+192.168.100.1		IN	PTR	pandora.iesgn.org
+
+Por lo que para crear una entrada de host es tan facil como "python gestionDNS.py -a -dir nombre ip"
+
+Si introducimos "python gestionDNS.py -a -alias wwww pandora" se agregará una entrada al fichero de resolución directa con el siguiente contenido:
+
+www		IN	CNAME	pandora.iesgn.org
+
+Para crear una entrada de un nuevo alias es tan facil como "python gestionDNS.py -a -dir alias host"
+
+Si usamos "python gestionDNS.py -b pandora" se borrarán los registros creados de pandora en el fichero de resolución directa e inversa. Si en evz de pandora ponemos "www", se borrará la entrada creada del alias "www".
